@@ -1,0 +1,37 @@
+# Disable directory listing
+Options -Indexes
+
+# Increase PHP File Upload Limits (100MB+)
+<IfModule mod_php7.c>
+    php_value upload_max_filesize 100M
+    php_value post_max_size 105M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+    php_value memory_limit 256M
+</IfModule>
+
+# Fallback for PHP 8+ (mod_php)
+<IfModule mod_php.c>
+    php_value upload_max_filesize 100M
+    php_value post_max_size 105M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+    php_value memory_limit 256M
+</IfModule>
+
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Force HTTPS (optional, uncomment in production)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Stop processing if file or folder exists
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Redirect non-existing routes to root index.php
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

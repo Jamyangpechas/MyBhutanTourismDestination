@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Header & Navigation — Dark Slate / Purple Accent Theme (Taller Layout)
+   ========================================================================== */
+
+header.app-navbar {
+    width: 100%;
+    background-color: #525252; /* Charcoal dark grey background */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    min-height: 80px; /* Enforces taller minimum bar height */
+}
+
+.nav-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 24px 32px; /* Increased vertical padding to expand height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Brand Logo Styling */
+.brand-logo {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo-title {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.logo-sub {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: #e5c158;
+    margin-top: 3px;
+}
+
+/* Navigation Links */
+.main-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    white-space: nowrap;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: opacity 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+.chevron {
+    font-size: 14px;
+    transform: rotate(90deg);
+    display: inline-block;
+}
+
+/* Vertical Separator Line */
+.main-nav-links::after {
+    content: '';
+    display: block;
+    height: 28px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-left: 8px;
+}
+
+/* Right Tools Container */
+.nav-tools {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Circular Accessibility Button */
+.icon-circle-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    background: transparent;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.icon-circle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Common Pill Button Base */
+.pill-btn {
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 12px; /* Rounded pill shape */
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Outlined Pill Buttons (Search, EN, Visa) */
+.search-pill, 
+.lang-pill, 
+.btn-outline {
+    background: transparent;
+    color: #ffffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+}
+
+.search-pill:hover, 
+.lang-pill:hover, 
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Vibrant Purple Solid Accent Button */
+.btn-purple {
+    background-color: #800080;
+    color: #ffffff;
+    border: 1.5px solid #800080;
+}
+
+.btn-purple:hover {
+    background-color: #6b006b;
+    border-color: #6b006b;
+}

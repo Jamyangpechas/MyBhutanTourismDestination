@@ -1,0 +1,282 @@
+/* ==========================================================================
+   BHUTAN Believe Showcase Section Styling
+   ========================================================================== */
+
+/* Standalone Showcase Section View (Hidden by Default) */
+#brand-details-view {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#brand-details-view.active-view {
+    display: block !important;
+    opacity: 1;
+}
+
+/* Main Showcase Section Container */
+.brand-showcase {
+    padding: 60px 24px 90px 24px;
+    
+    /* Background Image Cover */
+    background-image: url('../assets/images/brandbhutan.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    color: #334155;
+    font-family: 'Cinzel', 'Georgia', serif, system-ui, -apple-system;
+    line-height: 1.8;
+}
+
+.brand-showcase .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Elegant "Back to Home" Button */
+#back-to-home-btn,
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0f172a;
+    color: #ffffff !important;
+    border: 1px solid #0f172a;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 32px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+#back-to-home-btn:hover,
+.back-link:hover {
+    background: #059669;
+    color: #ffffff !important;
+    border-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+}
+
+/* Section Header Card */
+.section-header {
+    margin-bottom: 28px;
+    background: #ffffff;
+    padding: 24px 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e2e8f0;
+}
+
+.eyebrow {
+    color: #059669;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.section-header h2 {
+    font-size: 44px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 1.1;
+}
+
+/* Hero Brand Manifesto Block */
+.brand-manifesto {
+    margin: 0 0 32px 0;
+    padding: 28px 36px;
+    background: #ffffff;
+    border-left: 6px solid #059669;
+    border-radius: 0 16px 16px 0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.brand-manifesto p {
+    margin: 0;
+    color: #064e3b;
+    font-size: 17.5px;
+    line-height: 1.7;
+}
+
+.brand-manifesto strong {
+    color: #059669;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.brand-manifesto em {
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Individual Content Card Wrapper */
+.brand-block {
+    margin-bottom: 28px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;                       /* Clips header banner corners cleanly */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header Container Styling */
+.card-header {
+    padding: 18px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.card-header h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.35;
+    letter-spacing: 0.5px;
+}
+
+/* Right-Tabbed Subline */
+.banner-subline {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 800;
+    font-style: italic;
+    text-align: right;                      /* Align right */
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+}
+
+/* Card Body Content Padding & Typography */
+.card-content {
+    padding: 24px 28px 28px 28px;
+}
+
+.card-content p {
+    font-size: 15px;
+    color: #475569;
+    margin: 0 0 14px 0;
+    line-height: 1.7;
+}
+
+.card-content p:last-child {
+    margin-bottom: 0;
+}
+
+.card-content p strong {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Full-Width Context-Based Card Header Themes
+   ========================================================================== */
+
+/* Policy & Border Reopening - Royal Slate */
+.policy-block .card-header {
+    background-color: #f1f5f9;
+    border-left: 6px solid #334155;
+}
+.policy-block .card-header h3 { color: #0f172a; }
+.policy-block .banner-subline { color: #475569; }
+
+/* Youth at the Heart - Golden Sunshine */
+.youth-block .card-header {
+    background-color: #fffbeb;
+    border-left: 6px solid #d97706;
+}
+.youth-block .card-header h3 { color: #92400e; }
+.youth-block .banner-subline { color: #b45309; }
+
+/* Pristine Nature - Emerald Forest */
+.nature-block .card-header {
+    background-color: #ecfdf5;
+    border-left: 6px solid #059669;
+}
+.nature-block .card-header h3 { color: #065f46; }
+.nature-block .banner-subline { color: #047857; }
+
+/* Sustainable Development Fee - Vibrant Teal */
+.sdf-block .card-header {
+    background-color: #f0fdfa;
+    border-left: 6px solid #0d9488;
+}
+.sdf-block .card-header h3 { color: #115e59; }
+.sdf-block .banner-subline { color: #0f766e; }
+
+/* Conscious Travelers - Mindful Indigo */
+.traveler-block .card-header {
+    background-color: #eef2ff;
+    border-left: 6px solid #4f46e5;
+}
+.traveler-block .card-header h3 { color: #3730a3; }
+.traveler-block .banner-subline { color: #4338ca; }
+
+/* Heritage & Crafts - Terracotta Ochre */
+.crafts-block .card-header {
+    background-color: #fff7ed;
+    border-left: 6px solid #ea580c;
+}
+.crafts-block .card-header h3 { color: #9a3412; }
+.crafts-block .banner-subline { color: #c2410c; }
+
+/* ==========================================================================
+   Mobile Responsiveness
+   ========================================================================== */
+@media (max-width: 768px) {
+    .brand-showcase {
+        padding: 40px 16px 60px 16px;
+        background-attachment: scroll;
+    }
+
+    .section-header {
+        padding: 20px 24px;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+    }
+
+    .brand-manifesto {
+        padding: 22px 20px;
+    }
+
+    .card-header {
+        padding: 16px 20px;
+    }
+
+    .card-header h3 {
+        font-size: 17px;
+    }
+
+    .banner-subline {
+        font-size: 10.5px;
+        margin-top: 6px;
+    }
+
+    .card-content {
+        padding: 18px 20px;
+    }
+}

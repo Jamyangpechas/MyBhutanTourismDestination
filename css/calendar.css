@@ -1,0 +1,449 @@
+/* ==========================================================================
+   Bhutan Calendar View Styling (100% Full Width)
+   ========================================================================== */
+
+:root {
+    --cal-bg-primary: #f8fafc;
+    --cal-card-bg: #ffffff;
+    --cal-text-heading: #0f172a;
+    --cal-text-body: #475569;
+    --cal-text-muted: #64748b;
+    --cal-accent-emerald: #059669;
+    --cal-accent-emerald-light: #d1fae5;
+    --cal-accent-sky: #38bdf8;
+    --cal-border-color: #e2e8f0;
+    --cal-radius-lg: 16px;
+    --cal-radius-md: 12px;
+    --cal-radius-full: 9999px;
+    --cal-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --cal-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --cal-shadow-lg: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+    --cal-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Main Section Wrapper */
+#calendar-view {
+    padding: 40px 32px 80px 32px !important;
+    background-color: var(--cal-bg-primary) !important;
+    color: var(--cal-text-body) !important;
+    min-height: 100vh;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block;
+}
+
+#calendar-view .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Styled "Back to Home" Button */
+#calendar-view .back-to-home-btn,
+#calendar-view .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--cal-text-heading) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--cal-text-heading);
+    padding: 10px 22px;
+    border-radius: var(--cal-radius-full);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 24px;
+    transition: var(--cal-transition);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+#calendar-view .back-to-home-btn:hover,
+#calendar-view .btn-back:hover {
+    background: var(--cal-accent-emerald) !important;
+    border-color: var(--cal-accent-emerald);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(5, 150, 105, 0.25);
+}
+
+/* Header Banner */
+#calendar-view .section-header {
+    width: 100%;
+    background: var(--cal-card-bg) !important;
+    padding: 28px 36px;
+    border-radius: var(--cal-radius-lg);
+    border: 1px solid var(--cal-border-color);
+    box-shadow: var(--cal-shadow-sm);
+    margin-bottom: 24px;
+    box-sizing: border-box;
+}
+
+#calendar-view .eyebrow {
+    color: var(--cal-accent-emerald) !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+#calendar-view .section-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--cal-text-heading) !important;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Filter Navigation Bar */
+.cal-filter-bar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin: 0 0 32px 0;
+    padding: 10px 20px;
+    background: var(--cal-card-bg) !important;
+    border-radius: var(--cal-radius-full);
+    border: 1px solid var(--cal-border-color);
+    box-shadow: var(--cal-shadow-sm);
+    box-sizing: border-box;
+}
+
+.cal-filter-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: var(--cal-radius-full);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cal-text-body) !important;
+    cursor: pointer;
+    transition: var(--cal-transition);
+    font-family: inherit;
+}
+
+.cal-filter-btn:hover {
+    color: var(--cal-accent-emerald) !important;
+    background: #f1f5f9;
+}
+
+.cal-filter-btn.active {
+    background: var(--cal-accent-emerald) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+}
+
+.cal-filter-bar .filter-divider {
+    width: 1px;
+    height: 20px;
+    background: #cbd5e1;
+    margin: 0 4px;
+}
+
+/* Calendar Grid & Event Cards */
+.calendar-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
+    box-sizing: border-box;
+}
+
+.event-card {
+    display: flex;
+    background: var(--cal-card-bg) !important;
+    border-radius: var(--cal-radius-lg);
+    border: 1px solid var(--cal-border-color);
+    overflow: hidden;
+    box-shadow: var(--cal-shadow-sm);
+    cursor: pointer;
+    transition: var(--cal-transition);
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--cal-shadow-md);
+    border-color: #cbd5e1;
+}
+
+/* Event Date Side Badge */
+.event-date-badge {
+    width: 120px;
+    min-width: 120px;
+    background: var(--cal-text-heading) !important;
+    color: #ffffff !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    text-align: center;
+}
+
+.event-date-badge .month {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--cal-accent-sky) !important;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.event-date-badge .type {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #94a3b8 !important;
+    text-transform: uppercase;
+}
+
+/* Event Content Body */
+.event-card-body {
+    padding: 22px;
+    flex-grow: 1;
+}
+
+.event-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--cal-accent-emerald) !important;
+    background: var(--cal-accent-emerald-light);
+    padding: 4px 10px;
+    border-radius: var(--cal-radius-full);
+    margin-bottom: 10px;
+}
+
+.event-card-body h3 {
+    font-size: 19px;
+    color: var(--cal-text-heading) !important;
+    margin: 0 0 6px 0;
+    font-weight: 700;
+}
+
+.event-location {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cal-text-muted) !important;
+    margin: 0 0 10px 0;
+}
+
+.event-desc {
+    font-size: 13.5px;
+    color: var(--cal-text-body) !important;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Calendar Lightbox Modal Overlay
+   ========================================================================== */
+
+.cal-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.cal-modal.active {
+    display: flex;
+}
+
+.cal-modal-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.cal-modal-content {
+    position: relative;
+    background: var(--cal-card-bg);
+    width: 90%;
+    max-width: 540px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--cal-shadow-lg);
+    animation: calModalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+}
+
+@keyframes calModalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.cal-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: none;
+    font-size: 20px;
+    line-height: 1;
+    border-radius: var(--cal-radius-full);
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--cal-transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cal-modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.cal-modal-header {
+    background: var(--cal-text-heading);
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cal-modal-date {
+    color: var(--cal-accent-sky);
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.cal-modal-tag {
+    color: var(--cal-accent-emerald);
+    background: var(--cal-accent-emerald-light);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--cal-radius-full);
+}
+
+.cal-modal-body {
+    padding: 28px;
+}
+
+.cal-modal-body h3 {
+    margin: 0 0 6px 0;
+    color: var(--cal-text-heading);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.cal-modal-location {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cal-text-muted);
+    margin: 0 0 16px 0;
+}
+
+.cal-modal-body p {
+    color: var(--cal-text-body);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.cal-modal-highlights h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cal-accent-emerald);
+    margin: 0 0 10px 0;
+    font-weight: 800;
+}
+
+.cal-modal-highlights ul {
+    margin: 0 0 24px 0;
+    padding-left: 18px;
+    color: #334155;
+    font-size: 13.5px;
+}
+
+.cal-modal-highlights li {
+    margin-bottom: 6px;
+}
+
+.cal-modal-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    background: var(--cal-text-heading);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--cal-radius-md);
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--cal-transition);
+}
+
+.cal-modal-btn:hover {
+    background: var(--cal-accent-emerald);
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    #calendar-view {
+        padding: 24px 16px 48px 16px !important;
+    }
+
+    #calendar-view .section-header {
+        padding: 20px;
+    }
+
+    #calendar-view .section-header h2 {
+        font-size: 28px;
+    }
+
+    .cal-filter-bar {
+        border-radius: var(--cal-radius-lg);
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 8px;
+    }
+
+    .event-card {
+        flex-direction: column;
+    }
+
+    .event-date-badge {
+        width: 100%;
+        min-width: 100%;
+        padding: 12px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .event-date-badge .month {
+        margin-bottom: 0;
+    }
+}

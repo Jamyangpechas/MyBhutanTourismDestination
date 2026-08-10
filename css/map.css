@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Interactive Map View Styling
+   ========================================================================== */
+
+#interactive-map-view {
+    padding: 40px 32px 80px 32px !important;
+    background-color: #f8fafc !important;
+    min-height: 100vh;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#interactive-map-view .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Back Button Explicit Styling */
+#interactive-map-view .btn-back,
+#interactive-map-view .back-to-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0f172a !important;
+    color: #ffffff !important;
+    border: 1px solid #0f172a !important;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#interactive-map-view .btn-back:hover,
+#interactive-map-view .back-to-home-btn:hover {
+    background: #059669 !important;
+    border-color: #059669 !important;
+    transform: translateY(-2px);
+}
+
+/* Map Grid Split */
+.map-layout-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 32px;
+    align-items: start;
+    width: 100%;
+}
+
+/* District Details Sidebar */
+.map-info-panel {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.district-info-card .district-region {
+    font-size: 11px;
+    font-weight: 800;
+    color: #059669;
+    letter-spacing: 2px;
+}
+
+.district-info-card h3 {
+    font-size: 26px;
+    color: #0f172a;
+    margin: 8px 0 12px 0;
+    font-weight: 800;
+}
+
+.district-info-card .district-desc {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.district-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.stat-item {
+    font-size: 13px;
+    color: #334155;
+}
+

@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Master Design System & Variables
+   ========================================================================== */
+:root {
+    --primary-gold: #b38b3f;
+    --primary-gold-hover: #d1a753;
+    --brand-dark: #070a09;
+    --section-dark: #0f1412;
+    --section-cream: #f6f3eb;
+    --card-cream-bg: #faf7f0;
+    --card-border: #b38b3f;
+    --burgundy-header: #5e1317;
+    --burgundy-text: #fceecb;
+    --text-dark: #121413;
+    --text-muted: #2b2b2b;
+    --text-light: #f5f7f6;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--brand-dark);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+}
+
+/* Base Button Utilities */
+.btn {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--burgundy-header);
+    color: var(--burgundy-text);
+    border: 1px solid var(--primary-gold);
+}
+
+.btn-primary:hover {
+    background-color: #78191e;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-dark);
+    border: 1px solid var(--primary-gold);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-gold);
+    color: #ffffff;
+}
+
+
+

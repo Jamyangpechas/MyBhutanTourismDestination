@@ -1,0 +1,6 @@
+.env
+/admin/uploads/*
+!/admin/uploads/.htaccess
+!/admin/uploads/index.html
+.DS_Store
+*.log

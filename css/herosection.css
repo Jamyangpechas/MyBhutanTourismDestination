@@ -1,0 +1,302 @@
+/* ==========================================================================
+   Hero Container & Media Setup
+   ========================================================================== */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+/* Background Media Overlay */
+.hero-media-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-media-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.65) 100%);
+    z-index: 2;
+}
+
+.hero-bg-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Hero Typography */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.hero-eyebrow {
+    font-size: 1.125rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.hero-title {
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0;
+}
+
+/* Glassmorphism Video Controls */
+.hero-controls {
+    position: absolute;
+    bottom: 5.5rem;
+    right: 2rem;
+    z-index: 12;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.hero-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Volume Control Slider */
+.hero-volume-wrapper {
+    display: flex;
+    align-items: center;
+    padding-right: 0.5rem;
+}
+
+.hero-volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    outline: none;
+    cursor: pointer;
+}
+
+.hero-volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.hero-volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    border: none;
+}
+
+/* ==========================================================================
+   Fixed Floating Event Ticker (Viewport Fixed Bottom Bar)
+   ========================================================================== */
+
+.hero-event-ticker {
+    position: fixed;               /* Fixed position relative to viewport */
+    bottom: 0;
+    left: 0;
+    width: 100vw;                  /* Full viewport width */
+    height: 48px;
+    display: flex;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    overflow: hidden;
+    z-index: 999;                  /* High z-index keeps it visible above hero layers */
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Static Left Badge Label */
+.hero-ticker-badge {
+    position: relative;
+    z-index: 5;
+    flex-shrink: 0;
+    background: #059669;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    padding: 0 1.25rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    border-radius: 0;
+    box-shadow: 6px 0 16px rgba(0, 0, 0, 0.4);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #34d399;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 rgba(52, 211, 153, 0.7);
+    animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(52, 211, 153, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(52, 211, 153, 0);
+    }
+}
+
+/* Continuous Sliding Marquee Track */
+.hero-ticker-track {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+}
+
+.hero-ticker-content {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    will-change: transform;
+    animation: heroTickerSlide 18s linear infinite;
+}
+
+/* Pause scroll when user hovers */
+.hero-event-ticker:hover .hero-ticker-content {
+    animation-play-state: paused;
+}
+
+/* Event Link & Text Formatting */
+.hero-ticker-content .ticker-calendar-link {
+    color: #f1f5f9;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: opacity 0.2s ease;
+}
+
+.hero-ticker-content .ticker-calendar-link:hover {
+    opacity: 0.9;
+}
+
+.hero-ticker-content span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0 2rem;
+    color: #f1f5f9;
+}
+
+.hero-ticker-content strong {
+    color: #34d399;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.hero-ticker-content .ticker-calendar-link:hover strong {
+    color: #6ee7b7;
+    text-decoration: underline;
+}
+
+@keyframes heroTickerSlide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-controls {
+        bottom: 4.5rem;
+        right: 1rem;
+        padding: 0.35rem 0.5rem;
+    }
+
+    .hero-volume-slider {
+        width: 50px;
+    }
+
+    .hero-event-ticker {
+        height: 42px;
+    }
+
+    .hero-ticker-badge {
+        font-size: 0.65rem;
+        padding: 0 0.85rem;
+    }
+
+    .hero-ticker-content span {
+        font-size: 0.75rem;
+        padding: 0 1.25rem;
+    }
+}

@@ -1,0 +1,569 @@
+/* ==========================================
+   1. MAIN SECTION LAYOUT & CONTAINER
+   ========================================== */
+
+.plan-showcase {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 0 60px 0;
+    background-color: #f8fafc;
+    color: #1e293b;
+    box-sizing: border-box;
+}
+
+.plan-showcase .container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 12px;   
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   2. NAVIGATION & HEADERS
+   ========================================== */
+
+.plan-showcase .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    padding: 8px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+}
+
+.plan-showcase .btn-back:hover {
+    background: #ffffff;
+    border-color: #800020;
+    color: #800020;
+    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.12);
+    transform: translateY(-1px);
+}
+
+.plan-showcase .section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.plan-showcase .eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #d97706;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.plan-showcase h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+
+/* ==========================================
+   3. GRID & CARD CONTAINERS
+   ========================================== */
+
+.plan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px; 
+    align-items: stretch;
+    width: 100%;
+}
+
+.plan-info-card, 
+.plan-form-card,
+.plan-calculator-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 18px 14px; 
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;                   
+    min-width: 0; 
+}
+
+.plan-calculator-card {
+    border: 1px solid #fde68a;
+    background: #fffdfa;
+}
+
+.plan-info-card h3, 
+.plan-form-card h3,
+.plan-calculator-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+    color: #0f172a;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.plan-calculator-card h3 i {
+    color: #d97706;
+}
+
+/* Essential Steps List */
+.plan-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.plan-steps li {
+    line-height: 1.45;
+    color: #475569;
+    font-size: 0.88rem;
+    position: relative;
+    padding-left: 18px;
+}
+
+.plan-steps li::before {
+    content: "◆";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #d97706;
+    font-size: 9px;
+}
+
+.plan-steps strong {
+    color: #0f172a;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   4. FORM CONTROLS & CHIPS
+   ========================================== */
+
+.plan-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.form-group-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.form-group-row.three-cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.form-group label {
+    font-size: 10px;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.form-group-row.three-cols .form-group label {
+    white-space: normal;
+    line-height: 1.2;         
+    min-height: 24px;
+    display: flex;
+    align-items: flex-end;    
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #0f172a;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    outline: none;
+    transition: all 0.2s ease;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.form-group select option {
+    background-color: #ffffff;
+    color: #0f172a;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: #d97706;
+    box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.15);
+}
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+/* Multi-Select Interest Chips */
+.interest-chips-group {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.chip-item {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.chip-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+}
+
+.chip-item span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 4px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #334155;
+    transition: all 0.2s ease;
+    line-height: 1.2;
+    min-height: 38px;
+    box-sizing: border-box;
+}
+
+.chip-item:hover span {
+    border-color: #d97706;
+    background: #fffdfa;
+}
+
+.chip-item input[type="checkbox"]:checked + span {
+    background: #fffbe8;
+    border-color: #d97706;
+    color: #92400e;
+    box-shadow: 0 0 0 1px #d97706;
+}
+
+/* Action Buttons */
+.btn-primary.btn-block {
+    width: 100%;
+    margin-top: 4px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+    background: #800020;
+    color: #ffffff;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.2);
+}
+
+.btn-primary.btn-block:hover {
+    background: #600018;
+    box-shadow: 0 6px 16px rgba(128, 0, 32, 0.3);
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================
+   5. COST SUMMARY PANEL
+   ========================================== */
+
+.cost-summary-box {
+    margin-top: 2px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cost-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: #475569;
+    gap: 8px;
+}
+
+.cost-line strong {
+    color: #0f172a;
+    font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.cost-line strong.exempt-badge {
+    color: #16a34a;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.cost-line.total-line {
+    border-top: 1px dashed #cbd5e1;
+    padding-top: 8px;
+    margin-top: 2px;
+    font-size: 0.9rem;
+    color: #0f172a;
+}
+
+.cost-line.total-line strong {
+    color: #15803d;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.cost-summary-box .cost-note {
+    font-size: 0.7rem;
+    color: #64748b;
+    margin-top: 2px;
+    font-style: italic;
+    line-height: 1.3;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 6px;
+}
+
+
+/* ==========================================
+   6. UPCOMING & SERIES BOOKING WIDGET & MODAL
+   ========================================== */
+
+.series-booking-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px 0;
+}
+
+.departure-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.departure-row:last-child { 
+    border-bottom: none; 
+}
+
+.departure-row.sold-out { 
+    opacity: 0.6; 
+}
+
+.date-col strong { 
+    display: block; 
+    color: #1e293b; 
+    font-size: 15px; 
+}
+
+.date-col span { 
+    font-size: 13px; 
+    color: #64748b; 
+}
+
+/* Status Badges */
+.badge { 
+    padding: 4px 10px; 
+    border-radius: 20px; 
+    font-size: 12px; 
+    font-weight: 700; 
+}
+
+.badge-guaranteed { background: #dcfce7; color: #15803d; }
+.badge-open { background: #fef3c7; color: #b45309; }
+.badge-soldout { background: #fee2e2; color: #b91c1c; }
+
+.seats-count { 
+    font-size: 14px; 
+    font-weight: 600; 
+    color: #334155; 
+}
+
+/* Generic Widget Buttons */
+.btn { 
+    padding: 8px 16px; 
+    border-radius: 6px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    border: none; 
+}
+
+.btn-primary { 
+    background: #059669; 
+    color: #fff; 
+}
+
+.btn-primary:hover { 
+    background: #047857; 
+}
+
+.btn-disabled { 
+    background: #cbd5e1; 
+    color: #64748b; 
+    cursor: not-allowed; 
+}
+
+/* Series Booking Modal */
+.series-modal {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 9999;
+}
+
+.series-modal-overlay { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+.series-modal-content {
+    position: relative; 
+    background: #ffffff; 
+    width: 100%; 
+    max-width: 440px;
+    padding: 24px; 
+    border-radius: 12px; 
+    z-index: 10000; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.series-modal-close { 
+    position: absolute; 
+    top: 12px; 
+    right: 16px; 
+    border: none; 
+    background: none; 
+    font-size: 24px; 
+    cursor: pointer; 
+}
+
+/* Modal Form Overrides */
+.series-modal .form-group { 
+    margin-bottom: 14px; 
+}
+
+.series-modal .form-group label { 
+    display: block; 
+    font-size: 13px; 
+    font-weight: 600; 
+    margin-bottom: 4px; 
+    color: #334155; 
+}
+
+.series-modal .form-group input, 
+.series-modal .form-group select { 
+    width: 100%; 
+    padding: 8px 12px; 
+    border: 1px solid #cbd5e1; 
+    border-radius: 6px; 
+}
+
+.booking-summary { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background: #f8fafc; 
+    padding: 12px; 
+    border-radius: 6px; 
+    margin: 16px 0; 
+}
+
+.series-modal .btn-block { 
+    width: 100%; 
+    padding: 10px; 
+    font-size: 15px; 
+}
+
+/* Alerts */
+.booking-alert { 
+    padding: 10px; 
+    border-radius: 6px; 
+    font-size: 13px; 
+    margin-bottom: 12px; 
+}
+
+.alert-success { background: #dcfce7; color: #15803d; }
+.alert-error { background: #fee2e2; color: #b91c1c; }
+
+
+/* ==========================================
+   7. RESPONSIVE BREAKPOINTS
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .plan-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .departure-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

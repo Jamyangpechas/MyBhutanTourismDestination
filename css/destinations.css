@@ -1,0 +1,423 @@
+/* ==========================================================================
+   Destinations Showcase View Styling (100% Full-Width)
+   ========================================================================== */
+
+/* Main Container Section */
+#destinations-view {
+    padding: 40px 32px 80px 32px;
+    background-color: #f8fafc;
+    color: #334155;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 100% Width Container Wrapper */
+#destinations-view .container {
+    max-width: 100% !important;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Styled "Back to Home" Button */
+#destinations-view .back-to-home-btn,
+#destinations-view .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0f172a;
+    color: #ffffff !important;
+    border: 1px solid #0f172a;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#destinations-view .back-to-home-btn:hover,
+#destinations-view .btn-back:hover {
+    background: #059669;
+    border-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(5, 150, 105, 0.3);
+}
+
+/* Full-Width Section Header Styling */
+#destinations-view .section-header {
+    width: 100%;
+    background: #ffffff;
+    padding: 28px 36px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+    box-sizing: border-box;
+}
+
+#destinations-view .eyebrow {
+    color: #059669;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+#destinations-view .section-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* ==========================================================================
+   Horizontal Single-Row Filter Section (Centered Titles + Dividers)
+   ========================================================================== */
+
+.dest-filter-bar-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end; /* Aligns All Experiences with the bottom row of buttons */
+    justify-content: center;
+    gap: 18px;
+    margin: 0 0 36px 0;
+    padding: 14px 24px 16px 24px;
+    background: #ffffff;
+    border-radius: 50px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+/* Vertical Dividers Between Sections */
+.dest-filter-bar-container .filter-divider {
+    width: 1px;
+    height: 38px;
+    background: #cbd5e1;
+    margin: 0 4px;
+    align-self: flex-end; /* Align bottom edge with the buttons */
+    margin-bottom: 2px;
+}
+
+/* Vertical Stack for Group Label + Button Row */
+.filter-column-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: auto; /* Keeps group container strictly wrapping around the buttons */
+}
+
+/* Green Top Label */
+.filter-group-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #059669;
+    text-align: center;
+    width: 100%; /* Spans full width of button group for perfect center alignment */
+}
+
+/* Horizontal Button Row inside each group */
+.filter-buttons-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Filter Button Base Styles */
+.filter-btn {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    color: #059669;
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+/* Active Highlight Button */
+.filter-btn.active {
+    background: #059669;
+    color: #ffffff !important;
+    border-color: #059669;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+/* ==========================================================================
+   Full-Width Destinations Card Grid Layout
+   ========================================================================== */
+
+.destinations-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    box-sizing: border-box;
+}
+
+.destination-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.dest-image-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.dest-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.destination-card:hover .dest-image-wrapper img {
+    transform: scale(1.06);
+}
+
+.dest-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(15, 23, 42, 0.85);
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.dest-card-body {
+    padding: 22px;
+}
+
+.dest-card-body h3 {
+    font-size: 20px;
+    color: #0f172a;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.dest-card-body p {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+
+.dest-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.dest-tags .tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #059669;
+    background: #d1fae5;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+/* ==========================================================================
+   Destination Lightbox Modal Overlay
+   ========================================================================== */
+
+.dest-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.dest-modal.active {
+    display: flex;
+}
+
+.dest-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(6px);
+}
+
+.dest-modal-content {
+    position: relative;
+    background: #ffffff;
+    width: 90%;
+    max-width: 560px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+}
+
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.dest-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #0f172a;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dest-modal-close:hover {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.dest-modal-hero {
+    position: relative;
+    height: 240px;
+}
+
+.dest-modal-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dest-modal-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+    background: #059669;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dest-modal-body {
+    padding: 28px;
+}
+
+.dest-modal-body h3 {
+    margin: 0 0 10px 0;
+    color: #0f172a;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.dest-modal-body p {
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.dest-modal-highlights h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #059669;
+    margin: 0 0 10px 0;
+    font-weight: 800;
+}
+
+.dest-modal-highlights ul {
+    margin: 0 0 24px 0;
+    padding-left: 18px;
+    color: #334155;
+    font-size: 14px;
+}
+
+.dest-modal-highlights li {
+    margin-bottom: 6px;
+}
+
+.dest-modal-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    background: #0f172a;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.dest-modal-btn:hover {
+    background: #059669;
+}

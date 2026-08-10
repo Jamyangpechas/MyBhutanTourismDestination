@@ -1,0 +1,208 @@
+/* ==========================================================================
+   Why Bhutan - Expanded Vertical Card Layout (5 Cards, Edge-to-Edge)
+   ========================================================================== */
+
+:root {
+    --sdf-bg-light: #f4f8f7;          
+    --sdf-card-green-bg: #f2fbf5;     
+    --sdf-blue-primary: #0f3854;     
+    --sdf-green-accent: #20a061;     
+    --sdf-green-glow: rgba(32, 160, 97, 0.15);
+    
+    /* High-Impact Value Anchoring Red */
+    --sdf-red-accent: #b91c1c;       
+    
+    --sdf-text-main: #1f2937;        
+    --sdf-text-muted: #4b6354;       
+    --sdf-border-color: #d0e8d9;     
+}
+
+.sdf-section {
+    background-color: var(--sdf-bg-light);
+    padding: 40px 0;                    
+    color: var(--sdf-text-main);
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Intro Section Overhaul */
+.sdf-intro {
+    max-width: 800px;
+    margin: 0 auto 36px auto;      
+    padding: 0 20px;
+}
+
+/* Pill Badge */
+.sdf-eyebrow {
+    display: inline-block;
+    font-size: 11px;                     
+    font-weight: 800;                    
+    letter-spacing: 2.5px;                 
+    color: var(--sdf-red-accent);        
+    text-transform: uppercase;
+    margin-bottom: 12px;                  
+    padding: 6px 16px;                   
+    background: linear-gradient(135deg, rgba(185, 28, 28, 0.08), rgba(185, 28, 28, 0.03)); 
+    border-radius: 50px;
+    border: 1px solid rgba(185, 28, 28, 0.2);
+    box-shadow: 0 2px 6px rgba(185, 28, 28, 0.05);
+}
+
+.sdf-header-subtitle {
+    font-family: var(--font-heading, sans-serif);
+    font-size: 32px;                     
+    font-weight: 800;
+    color: var(--sdf-blue-primary);
+    margin: 4px 0 8px 0;                 
+    line-height: 1.25;
+}
+
+.sdf-header-subtitle span {
+    color: var(--sdf-green-accent);
+}
+
+.sdf-intro p {
+    font-size: 15.5px;
+    color: var(--sdf-text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Edge-to-Edge 5-Card Grid Layout */
+.sdf-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  /* Evenly spreads 5 cards across screen */
+    gap: 14px;                              
+    width: 100%;
+    max-width: 100%;                        
+    padding: 0 16px;                        
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+/* Compact Proportional Card Container */
+.sdf-card {
+    background-color: var(--sdf-card-green-bg);
+    border: 1px solid var(--sdf-border-color);
+    border-radius: 12px;                
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(15, 56, 84, 0.05);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.sdf-card:hover {
+    transform: translateY(-5px);         
+    border-color: var(--sdf-green-accent);
+    box-shadow: 0 12px 24px var(--sdf-green-glow);
+}
+
+/* Card Top Header Banner */
+.sdf-card-header {
+    width: 100%;
+    height: 52px;                        
+    padding: 8px 10px;                   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--sdf-blue-primary);
+    box-sizing: border-box;
+}
+
+.sdf-card-header h4 {
+    font-family: var(--font-heading, sans-serif);
+    color: #ffffff;
+    font-size: 11px;                   
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.3;
+    margin: 0;
+    text-align: center;
+}
+
+/* Standardized Image Container */
+.sdf-image-container {
+    width: 100%;
+    height: 150px;                       /* Reduced height prevents stretched card look */
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.sdf-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.sdf-card:hover .sdf-image-container img {
+    transform: scale(1.06);
+}
+
+/* Card Body */
+.sdf-card-body {
+    padding: 16px 12px 20px 12px;        
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sdf-card-accent {
+    color: var(--sdf-green-accent);
+    font-size: 11px;
+    display: block;
+    margin-bottom: 6px;                  
+    transition: transform 0.3s ease;
+}
+
+.sdf-card:hover .sdf-card-accent {
+    transform: scale(1.25);
+}
+
+.sdf-card-body p {
+    font-size: 12.5px;                   
+    line-height: 1.5;
+    color: var(--sdf-text-muted);
+    margin: 0;
+}
+
+/* Closing Callout Section */
+.sdf-closing {
+    max-width: 680px;
+    margin: 32px auto 0 auto;            
+    padding: 0 16px;
+}
+
+.sdf-closing h4 {
+    font-family: var(--font-heading, sans-serif);
+    font-size: 17px;                     
+    font-weight: 800;
+    color: var(--sdf-blue-primary);
+    margin: 0 0 4px 0;
+}
+
+.sdf-closing p {
+    font-size: 14.5px;
+    color: var(--sdf-text-muted);
+    margin: 0;
+}
+
+/* Diamond Divider */
+.diamond-divider {
+    text-align: center;
+    color: var(--sdf-green-accent);
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin: 16px 0 12px 0;
+    user-select: none;
+}

@@ -1,0 +1,460 @@
+/* ==========================================================================
+   Hero Showcase Section — Authentic Brand Styling
+   ========================================================================== */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent video overflow */
+    /* Fallback background when media is missing */
+    background: linear-gradient(
+                    to bottom, 
+                    rgba(7, 10, 9, 0.45) 0%, 
+                    rgba(7, 10, 9, 0.70) 100%
+                );
+}
+
+/* Background Media Container (Video / Dynamic Image) */
+.hero-media-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Dark overlay on top of dynamic media for text readability */
+.hero-media-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+                    to bottom, 
+                    rgba(7, 10, 9, 0.45) 0%, 
+                    rgba(7, 10, 9, 0.70) 100%
+                );
+    z-index: 2;
+}
+
+.hero-bg-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps media proportions while expanding to fill container */
+    object-position: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3; /* Keeps text above background media & overlay */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Primary Brand Identity: BHUTAN Believe */
+h1.hero-eyebrow {
+    font-family: var(--font-heading, serif);
+    font-size: 54px;                           /* Grand, luxury header size */
+    font-weight: 800;
+    letter-spacing: 5px;                       /* Wide, open tracking */
+    color: #ffffff;
+    text-transform: none;                     /* "BHUTAN Believe" mixed case */
+    background: none;                         /* Clean text, no pill background */
+    border: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    line-height: 1.15;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Sub-heading / Brand Promise: Experience Stillness. Make an Impact. */
+h2.hero-title {
+    font-family: var(--font-heading, serif);
+    font-size: 24px;                           /* Smaller, refined subtitle */
+    font-weight: 400;                          /* Lighter weight for elegance */
+    letter-spacing: 2px;
+    color: #e2e8e5;
+    margin: 0;
+    line-height: 1.4;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   Hero Media Controls (Audio & Playback UI)
+   ========================================================================== */
+.hero-controls {
+    position: absolute;
+    bottom: 30px;
+    right: 96px; /* Offset to sit right beside the chatbot toggle button */
+    z-index: 4;  /* Floats above dark overlay and background video */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(7, 10, 9, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 14px;
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.hero-controls:hover {
+    background: rgba(7, 10, 9, 0.75);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: background 0.2s ease, transform 0.2s ease;
+    padding: 0;
+}
+
+.hero-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+/* Smooth expanding volume range slider */
+.hero-volume-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.hero-controls:hover .hero-volume-wrapper,
+.hero-volume-wrapper:focus-within {
+    max-width: 80px;
+    opacity: 1;
+}
+
+.hero-volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 70px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+.hero-volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.hero-volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* ==========================================================================
+   Floating Chatbot Widget — Bottom-Right Alignment & Bhutan Red Theme
+   ========================================================================== */
+
+/* Main Floating Container (Anchored Bottom-Right) */
+#bhutan-chat-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    left: auto;
+    z-index: 9999;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Floating Action Button */
+.chat-toggle-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #9d1c24; /* Bhutan Red accent */
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.chat-toggle-btn:hover {
+    transform: scale(1.08);
+    background-color: #82151c;
+}
+
+/* Toggle Icon States */
+.chat-toggle-btn .close-icon {
+    display: none;
+}
+
+#bhutan-chat-widget.active .chat-toggle-btn .chat-icon {
+    display: none;
+}
+
+#bhutan-chat-widget.active .chat-toggle-btn .close-icon {
+    display: inline;
+}
+
+/* Chat Panel Window (Aligned Right Above Button) */
+.chat-box {
+    width: 350px;
+    height: 460px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    bottom: 68px; /* Positioned directly above button */
+    right: 0;     /* Aligned to right edge */
+    left: auto;
+    transition: opacity 0.2s ease;
+}
+
+/* Display Chat Box when Active */
+#bhutan-chat-widget.active .chat-box {
+    display: flex;
+}
+
+/* Chat Header */
+.chat-header {
+    background-color: #1a2332;
+    color: #ffffff;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #9d1c24;
+}
+
+.chat-title h4 {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.online-status {
+    font-size: 12px;
+    color: #4cd964;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.online-status::before {
+    content: '●';
+    font-size: 10px;
+}
+
+/* Header Close Button Styling */
+.chat-panel-close-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.chat-panel-close-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Scrollable Messages Area */
+.chat-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #f8f9fa;
+}
+
+.message {
+    max-width: 82%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.bot-message {
+    background-color: #e9ecef;
+    color: #212529;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+    white-space: normal;
+}
+
+.user-message {
+    background-color: #9d1c24;
+    color: #ffffff;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+/* ==========================================================================
+   Bot Markdown Typography Styling (Strict Single-Row Point Layout)
+   ========================================================================== */
+.bot-message p {
+    margin: 0 0 8px 0;
+}
+
+.bot-message p:last-child {
+    margin-bottom: 0;
+}
+
+.bot-message ul,
+.bot-message ol {
+    display: block !important;
+    margin: 8px 0 !important;
+    padding-left: 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.bot-message ul {
+    list-style-type: disc !important;
+}
+
+.bot-message ol {
+    list-style-type: decimal !important;
+}
+
+.bot-message li {
+    display: list-item !important;
+    width: 100% !important;
+    line-height: 1.4 !important;
+    margin-bottom: 6px !important;
+    clear: both !important;
+    float: none !important;
+}
+
+.bot-message li:last-child {
+    margin-bottom: 0 !important;
+}
+
+.bot-message strong {
+    font-weight: 600;
+    color: #111111;
+}
+
+/* Input Form Bar */
+.chat-form {
+    padding: 12px;
+    background-color: #ffffff;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    gap: 8px;
+}
+
+.chat-form input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.chat-form input:focus {
+    border-color: #9d1c24;
+}
+
+.chat-form button {
+    padding: 10px 16px;
+    background-color: #9d1c24;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.chat-form button:hover {
+    background-color: #82151c;
+}
+
+/* ==========================================================================
+   Responsive Scaling
+   ========================================================================== */
+@media (max-width: 768px) {
+    h1.hero-eyebrow {
+        font-size: 34px;
+        letter-spacing: 3px;
+    }
+
+    h2.hero-title {
+        font-size: 18px;
+    }
+
+    .hero-controls {
+        bottom: 20px;
+        right: 84px;
+        padding: 6px 10px;
+    }
+
+    /* Keep volume slider visible on touch devices */
+    .hero-volume-wrapper {
+        max-width: 60px;
+        opacity: 1;
+    }
+    
+    .hero-volume-slider {
+        width: 50px;
+    }
+
+    /* Chatbot Responsive Adjustments */
+    #bhutan-chat-widget {
+        bottom: 16px;
+        right: 16px;
+        left: auto;
+    }
+
+    .chat-box {
+        width: calc(100vw - 32px);
+        height: 65vh;
+        right: 0;
+    }
+}

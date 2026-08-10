@@ -1,0 +1,362 @@
+/* ==========================================================================
+   Group Series & Upcoming Events Widget Styles
+   ========================================================================== */
+
+/* Main Container Base Styles */
+.series-booking-widget {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    color: #1e293b !important;
+    font-family: inherit;
+}
+
+/* Header & Typography Overrides */
+.series-booking-widget .widget-header {
+    margin-bottom: 20px;
+}
+
+.series-booking-widget h3 {
+    color: #0f172a !important;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+}
+
+.series-booking-widget .widget-subtitle {
+    color: #475569 !important;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.series-booking-widget .no-data-msg {
+    color: #64748b !important;
+    font-size: 14px;
+    padding: 16px 0;
+    margin: 0;
+}
+
+/* Departure Rows List */
+.series-booking-widget .departures-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.series-booking-widget .departure-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    gap: 16px;
+}
+
+.series-booking-widget .departure-row:hover {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.series-booking-widget .departure-row.has-event {
+    border-left: 4px solid #7c3aed;
+    background: #faf5ff;
+}
+
+.series-booking-widget .departure-row.sold-out {
+    opacity: 0.6;
+    background: #f1f5f9;
+}
+
+/* Date & Event Columns */
+.series-booking-widget .date-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 180px;
+}
+
+.series-booking-widget .date-range strong {
+    display: block;
+    color: #0f172a !important;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.series-booking-widget .date-range span {
+    font-size: 13px;
+    color: #64748b !important;
+}
+
+.series-booking-widget .event-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f3e8ff;
+    color: #6b21a8 !important;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+/* Status Badges */
+.series-booking-widget .status-col {
+    display: flex;
+    align-items: center;
+}
+
+.series-booking-widget .badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.series-booking-widget .badge-guaranteed {
+    background: #dcfce7;
+    color: #15803d !important;
+}
+
+.series-booking-widget .badge-open {
+    background: #fef3c7;
+    color: #b45309 !important;
+}
+
+.series-booking-widget .badge-soldout {
+    background: #fee2e2;
+    color: #b91c1c !important;
+}
+
+/* Seats Remaining Counter */
+.series-booking-widget .seats-col {
+    min-width: 100px;
+    text-align: center;
+}
+
+.series-booking-widget .seats-count {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155 !important;
+}
+
+/* Actions & Buttons */
+.series-booking-widget .action-col {
+    text-align: right;
+}
+
+.series-booking-widget .btn {
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.15s ease;
+}
+
+.series-booking-widget .btn-primary {
+    background-color: #059669;
+    color: #ffffff !important;
+}
+
+.series-booking-widget .btn-primary:hover {
+    background-color: #047857;
+}
+
+.series-booking-widget .btn-disabled {
+    background-color: #cbd5e1;
+    color: #64748b !important;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Booking Lightbox Modal Overlay
+   ========================================================================== */
+
+.series-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.series-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+}
+
+.series-modal-content {
+    position: relative;
+    background: #ffffff !important;
+    color: #1e293b !important;
+    width: 100%;
+    max-width: 440px;
+    padding: 24px;
+    border-radius: 12px;
+    z-index: 100000;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.series-modal-content h3 {
+    color: #0f172a !important;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+}
+
+.series-modal-content .modal-sub {
+    color: #475569 !important;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.series-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #64748b;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.series-modal-close:hover {
+    color: #0f172a;
+}
+
+.modal-event-banner {
+    background: #f3e8ff;
+    color: #6b21a8 !important;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    border-left: 3px solid #7c3aed;
+}
+
+/* Modal Form Fields */
+.series-modal .form-group {
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.series-modal .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #334155 !important;
+}
+
+.series-modal .form-group input,
+.series-modal .form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.series-modal .form-group input:focus,
+.series-modal .form-group select:focus {
+    outline: none;
+    border-color: #059669;
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+}
+
+.series-modal .booking-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin: 18px 0;
+    border: 1px solid #e2e8f0;
+}
+
+.series-modal .booking-summary span {
+    font-size: 14px;
+    color: #475569 !important;
+}
+
+.series-modal .booking-summary strong {
+    font-size: 18px;
+    color: #059669 !important;
+}
+
+.series-modal .btn-block {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.series-modal .booking-alert {
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.series-modal .alert-success {
+    background: #dcfce7;
+    color: #15803d !important;
+    border: 1px solid #bbf7d0;
+}
+
+.series-modal .alert-error {
+    background: #fee2e2;
+    color: #b91c1c !important;
+    border: 1px solid #fecaca;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .series-booking-widget .departure-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .series-booking-widget .date-col,
+    .series-booking-widget .status-col,
+    .series-booking-widget .seats-col,
+    .series-booking-widget .action-col {
+        width: 100%;
+        text-align: left;
+    }
+
+    .series-booking-widget .action-col .btn {
+        width: 100%;
+    }
+}
