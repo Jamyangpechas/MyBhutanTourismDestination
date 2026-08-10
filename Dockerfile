@@ -1,13 +1,17 @@
+# Use official PHP image with Apache
 FROM php:8.2-apache
 
-# Install PDO MySQL extension for DB connection
+# Install MySQL driver extensions for PHP
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-# Enable Apache Mod_Rewrite for clean URLs (.htaccess)
+# Enable Apache mod_rewrite for custom URLs (.htaccess support)
 RUN a2enmod rewrite
 
-# Set working directory
+# Set working directory inside the container
 WORKDIR /var/www/html
 
-# Adjust permissions for Apache
-RUN chown -R www-data:www-data /var/www/html
+# Copy all project files into the container
+COPY . /var/www/html/
+
+# Expose port 80
+EXPOSE 80
