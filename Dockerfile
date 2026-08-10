@@ -1,17 +1,16 @@
-# Use official PHP image with Apache
 FROM php:8.2-apache
 
-# Install MySQL driver extensions for PHP
+# Install MySQL extension for PHP
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-# Enable Apache mod_rewrite for custom URLs (.htaccess support)
-RUN a2enmod rewrite
+# Disable conflicting Apache MPM modules so Railway won't crash
+RUN a2dismod mpm_event mpm_worker || true \
+    && a2enmod mpm_prefork
 
-# Set working directory inside the container
-WORKDIR /var/www/html
-
-# Copy all project files into the container
+# Copy project files into Apache web server root
 COPY . /var/www/html/
 
-# Expose port 80
+# Enable Apache rewrite module if your app uses routing
+RUN a2enmod rewrite
+
 EXPOSE 80
